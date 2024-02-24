@@ -8,9 +8,10 @@ Now anything that can be done in ZIM can be used as an interactive texture on an
 <p>See the <a href=https://zimjs.com/015>ZIM 015 Features page</a> for links to the promo video, VR examples and a half dozen general examples as well as video and article resources in ZIM and three.js forums.</p>
 
 
-![textureactives](https://github.com/danzen/zim-three/assets/380281/f28fc27f-538b-40aa-8375-6f0b8bc422a8)
+<a href=https://zimjs.com/015>![textureactives](https://github.com/danzen/zim-three/assets/380281/f28fc27f-538b-40aa-8375-6f0b8bc422a8)</a>
 
-<h2>Sample Code</h2>
+<h2>Sample Code - Panel with Draggable Circle</h2>
+<p><a href=https://zimjs.com/015/textureactive_simple.html>LIVE EXAMPLE</a></p>
 
 ```JavaScript
 // ~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,42 +28,94 @@ const panel = new TextureActive({
 // Usually we would use this during production then turn it off
 // Here we add a logo that will also toggle when pressed	
 TextureActive.makeLogo("light", true).loc(50,50,panel).tap(()=>{
-      textureActives.manager.toggle();
-  });
+  textureActives.manager.toggle();
+});
 
-  new Circle(100, purple)
-      .center(panel)
-      .drag();    
+new Circle(100, purple)
+  .center(panel)
+  .drag();    
 
 
-  // ~~~~~~~~~~~~~~~~~~~~~~~
-  // THREEJS
- 
-  const three = new Three({
-      width:window.innerWidth, 
-      height:window.innerHeight, 
-      cameraPosition:new THREE.Vector3(0,0,500),
-      textureActive:true
-  });
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// THREEJS
 
-  const renderer = three.renderer;
-  const scene = three.scene;
-  const camera = three.camera;
-  const canvas = three.canvas;
-  const controls = new OrbitControls(camera, canvas);
+const three = new Three({
+  width:window.innerWidth, 
+  height:window.innerHeight, 
+  cameraPosition:new THREE.Vector3(0,0,500),
+  textureActive:true
+});
 
-  // TEXTUREACTIVES
-  const textureActives = new TextureActives(panel, THREE, three, renderer, scene, camera, controls);
+const renderer = three.renderer;
+const scene = three.scene;
+const camera = three.camera;
+const canvas = three.canvas;
+const controls = new OrbitControls(camera, canvas);
 
-  // if the object is a plane then we can use the makePanel
-  const canvasWindow = three.makePanel({
-      textureActive:panel, 
-      textureActives:textureActives, 
-      curve:50,
-      doubleSide:true
-  })
-  scene.add(canvasWindow);   
-  ```
+// TEXTUREACTIVES
+const textureActives = new TextureActives(panel, THREE, three, renderer, scene, camera, controls);
+
+// if the object is a plane then we can use the makePanel
+const canvasWindow = three.makePanel({
+  textureActive:panel, 
+  textureActives:textureActives, 
+  curve:50,
+  doubleSide:true
+})
+scene.add(canvasWindow);   
+```
+
+<h2>Sample Code - Draw on Cube with Pen</h2>
+<p><a href=https://zimjs.com/015/textureactive_simple2.html>LIVE EXAMPLE</a></p>
+
+```JavaScript
+// ~~~~~~~~~~~~~~~~~~~~~~~
+// ZIM
+
+const paper = new TextureActive({
+	width:500,
+	height:500,
+	color:black,
+	corner:0,
+	borderColor:white,
+	borderWidth:2,
+	backingOrbit:false
+});
+
+const pen = new Pen({color:series(white,purple), size:10, cache:false}).center(paper);
+new MotionController({target:pen, type:"pressmove", container:paper});
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// THREEJS
+
+const three = new Three({
+	width:window.innerWidth, 
+	height:window.innerHeight, 
+	cameraPosition:new THREE.Vector3(0,0,500),
+	textureActive:true
+});
+
+const renderer = three.renderer;
+const scene = three.scene;
+const camera = three.camera;
+const canvas = three.canvas;
+const controls = new OrbitControls(camera, canvas);
+
+// TEXTUREACTIVES
+const textureActives = new TextureActives(paper, THREE, three, renderer, scene, camera, controls);
+
+
+// if the object is not a plane then we use the CanvasTexture
+const cubeGeometry = new THREE.BoxGeometry(300,300,300);
+const cubeTexture = new THREE.CanvasTexture(paper.canvas);
+const cubeMaterial = new THREE.MeshBasicMaterial({map:cubeTexture});
+const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);           
+scene.add(cube); 
+textureActives.addMesh(cube);
+
+```
+
 
 <h2>2. three.js inside of ZIM</h2>
 
