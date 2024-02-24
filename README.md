@@ -11,7 +11,10 @@ Now anything that can be done in ZIM can be used as an interactive texture on an
 <a href=https://zimjs.com/015>![textureactives](https://github.com/danzen/zim-three/assets/380281/f28fc27f-538b-40aa-8375-6f0b8bc422a8)</a>
 
 <h2>Sample Code - Panel with Draggable Circle</h2>
-<p><a href=https://zimjs.com/015/textureactive_simple.html>LIVE EXAMPLE</a></p>
+
+<img src="https://github.com/danzen/zim-three/assets/380281/096afaa4-17f2-43a6-9695-41cbe4cf735a" width=300>
+
+<p><a href=https://zimjs.com/015/textureactive_simple.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Post</a></p>
 
 ```JavaScript
 // ~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +69,11 @@ scene.add(canvasWindow);
 ```
 
 <h2>Sample Code - Draw on Cube with Pen</h2>
-<p><a href=https://zimjs.com/015/textureactive_simple2.html>LIVE EXAMPLE</a></p>
+
+
+<img src="https://github.com/danzen/zim-three/assets/380281/623548eb-f14a-49b2-a15b-36f292a1b075" width=300>
+
+<p><a href=https://zimjs.com/015/textureactive_simple2.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Post</a></p>
 
 ```JavaScript
 // ~~~~~~~~~~~~~~~~~~~~~~~
