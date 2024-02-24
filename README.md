@@ -143,6 +143,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { Three } from "@zimjs/three"
 ```
 
+<p><em>NOTE: in the CDN version we import a half dozen controls and loaders.  These can all be found in the NPM three directory
+under three/examples/jsm/ in controls, loaders and webxr.  The ObjectControls can be found here https://www.npmjs.com/package/threejs-object-controls and brought into your app with npm install threejs-object-controls.</em></p>
+
 
 <h2>Adding three.js inside of ZIM</h2>
 
