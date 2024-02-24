@@ -14,7 +14,7 @@ Now anything that can be done in ZIM can be used as an interactive texture on an
 
 <img src="https://github.com/danzen/zim-three/assets/380281/096afaa4-17f2-43a6-9695-41cbe4cf735a" width=300>
 
-<p><a href=https://zimjs.com/015/textureactive_simple.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Post</a></p>
+<p><a href=https://zimjs.com/015/textureactive_simple.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Help</a></p>
 
 ```JavaScript
 // ~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,7 +73,7 @@ scene.add(canvasWindow);
 
 <img src="https://github.com/danzen/zim-three/assets/380281/623548eb-f14a-49b2-a15b-36f292a1b075" width=300>
 
-<p><a href=https://zimjs.com/015/textureactive_simple2.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Post</a></p>
+<p><a href=https://zimjs.com/015/textureactive_simple2.html>Live Example</a> | <a href=https://forum.zimjs.com/t/textureactives-zim-inside-three-js/237>Forum Help</a></p>
 
 ```JavaScript
 // ~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,13 +123,42 @@ textureActives.addMesh(cube);
 
 ```
 
+<h2>CDN</h2>
+<p>Usually we use ES Modules to bring in ZIM and if we want Three then we the code below - see the starting template at the top of the https://zimjs.com/code page.
+</p>
 
-<h2>2. three.js inside of ZIM</h2>
+```JavaScript
+import zim from "https://zimjs.org/cdn/016/zim_three";
+```
 
-![image](https://github.com/danzen/zim-three/assets/380281/4419faec-84fd-4c9a-a79c-6aff1f671a48)
+<h2>NPM</h2>
+<p>This repository holds the NPM package so you can install from <a href=https://www.npmjs.com/package/@zimjs/three target=node>@zimjs/three</a> on NPM.  The <a href=https://www.npmjs.com/package/zimjs target=node>ZIM&nbsp;package</a> must be installed to work.</p>
 
-<p>This earlier original use case overlays a three.js scene on the ZIM 2D canvas.  In the <a href=https://zimjs.com/three/>example&nbsp;pictured&nbsp;above</a>, the phone is a model in three.js.  We are controlling color, rotation and zoom with ZIM components around the side.  A drawback is either ZIM or three.js is interactive but not both.  We did modify the OrbitControls of our ES6 module at https://zimjs.org/cdn/016/zim_three.js to work even when ZIM is interactive - but have not similarily adjusted a node module.</p>
+```JavaScript
+import zim from "zimjs"
 
+// these are included in the @zimjs/three package as dependencies
+import * as THREE from "three" 
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+import { Three } from "@zimjs/three"
+```
+
+
+<h2>Adding three.js inside of ZIM</h2>
+
+<a href=https://zimjs.com/three/>![image](https://github.com/danzen/zim-three/assets/380281/4419faec-84fd-4c9a-a79c-6aff1f671a48)</a>
+
+<p>This earlier original use-case overlays a three.js scene on the ZIM 2D canvas.  In the <a href=https://zimjs.com/three/>example&nbsp;pictured&nbsp;above</a>, the phone is a model in three.js.  We are controlling color, rotation and zoom with ZIM components around the side.  A drawback is either ZIM or three.js is interactive but not both.  We did modify the OrbitControls of our ES6 module at https://zimjs.org/cdn/016/zim_three.js to work even when ZIM is interactive - but have not similarily adjusted a node module.</p>
+
+<h2>Older Examples</h2>
+
+- https://zimjs.com/three/ - phone with controls
+- https://zimjs.com/bits/view/three.html - cube with controls
+- https://codepen.io/zimjs/full/qGPVqO - world with labels
+- https://codepen.io/zimjs/full/abzXeZX - gallery
+
+<h2>ZIM</h2>
+<p>See the ZIM repository at https://github.com/danzen/zimjs for information on ZIM and open source license, etc.</p>
 
     
 
