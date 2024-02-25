@@ -9,7 +9,7 @@ declare namespace zim {
         constructor(config: {width?: number, height?: number, color?: string, cameraPosition?: THREE.Vector3, cameraLook?: THREE.Vector3, interactive?: boolean, resize?: boolean, frame?: Frame, ortho?: boolean, textureActive?: boolean, colorSpace?: string, colorManagement?: boolean, legacyLights?: boolean, throttle?: boolean, lay?: string, full?: boolean, xr?: boolean, VRButton?: boolean|HTMLAnchorElement, xrBufferScale?: number});
         
         position(x?: number, y?: number):this
-        scale(s?: number):VRButton
+        scale(s?: number):this
         rotateAroundAxis(obj: THREE.Mesh, axis?: THREE.Vector3, radians?: boolean):this
         rotateAroundObjectAxis(obj: THREE.Mesh, axis?: THREE.Vector3, radians?: boolean):this
         makePanel(textureActive: TextureActive|[TextureActive], textureActives: TextureActives, scale?: number, curve?: number, opacity?: number, material?: string, doubleSide?: boolean, colorSpace?: string):THREE.Mesh
