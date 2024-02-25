@@ -62,9 +62,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
     var sig = "width, height, color, cameraPosition, cameraLook, interactive, resize, frame, ortho, textureActive, colorSpace, colorManagement, legacyLights, throttle, lay, full, xr, VRButton, xrBufferScale";
     var duo; if (duo = zob(zim.Three, arguments, sig, this)) return duo;
     
-    if (zot(frame)) frame = WW.zdf;    
-    
-    // if (zot(THREE)) {zog("ZIM THREE needs a THREE namespace active"); return;}
+    if (zot(frame)) frame = WW.zdf;     
     if (zot(createjs)) {zog("ZIM THREE needs a createjs namespace active"); return;}
     if (zot(width)) width = frame.width;
     if (zot(height)) height = frame.height;
@@ -85,6 +83,8 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
     if (zot(xr)) xr = false;
     if (zot(VRButton)) VRButton = xr?window.VRButton:false;
     if (zot(xrBufferScale)) xrBufferScale = 2;
+
+    if (!zim.zimDefaultThree) zim.zimDefaultThree = this;
 
     var that = this;
 
