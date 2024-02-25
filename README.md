@@ -68,6 +68,12 @@ const canvasWindow = three.makePanel({
 scene.add(canvasWindow);   
 ```
 
+Here are the specific imports if desired:
+
+```javascript
+import { Frame, Circle, TextureActive, TextureActives } from "zimjs"
+```
+
 <h2>Sample Code - Draw on Cube with Pen</h2>
 
 
@@ -121,6 +127,11 @@ const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cube); 
 textureActives.addMesh(cube);
 
+```
+Here are the specific imports for the example above if desired:
+
+```javascript
+import { Frame, MotionController, TextureActive, TextureActives, series, Pen } from "zimjs"
 ```
 
 <h2>CDN</h2>
