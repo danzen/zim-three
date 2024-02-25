@@ -1,6 +1,6 @@
 
 import { Frame, TextureActive, TextureActives } from "zimjs"
-import THREE from "three"
+import * as THREE from "three"
 
 declare namespace zim {
 
@@ -70,17 +70,5 @@ declare namespace zim {
     }
 
 }
-
-// // trying to augment three.js typings adding pos() to a mesh. Sorry... can't seem to make it work
-
-// declare namespace THREE {
-//     export class Mesh<
-//         TGeometry extends BufferGeometry = THREE.BufferGeometry,
-//         TMaterial extends THREE.Material | THREE.Material[] = THREE.Material | THREE.Material[],
-//         TEventMap extends Object3DEventMap = THREE.Object3DEventMap,
-//     > extends THREE.Object3D<TEventMap> {
-//         pos(x?: number, y?: number, horizontal?: string, vertical?: string, gutter?: number):void
-//     }
-// }
 
 export = zim

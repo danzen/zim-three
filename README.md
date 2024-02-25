@@ -132,12 +132,10 @@ import zim from "https://zimjs.org/cdn/016/zim_three";
 ```
 
 <h2>NPM</h2>
-<p>This repository holds the NPM package so you can install from <a href=https://www.npmjs.com/package/@zimjs/three target=node>@zimjs/three</a> on NPM.  The <a href=https://www.npmjs.com/package/zimjs target=node>ZIM&nbsp;package</a> must be installed to work.</p>
+<p>This repository holds the NPM package so you can install from <a href=https://www.npmjs.com/package/@zimjs/three target=node>@zimjs/three</a> on NPM.  The <a href=https://www.npmjs.com/package/zimjs target=node>ZIM&nbsp;package</a> and <a href=https://www.npmjs.com/package/three target=node>three&nbsp;package</a> must be installed to work.  For three.js typings install <a href=https://www.npmjs.com/package/@types/three target=node>@types/three</a></p>
 
 ```JavaScript
 import zim from "zimjs"
-
-// these are included in the @zimjs/three package as dependencies
 import * as THREE from "three" 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { Three } from "@zimjs/three"
