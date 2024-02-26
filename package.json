@@ -36,7 +36,7 @@
     },
     "peerDependencies": {
         "zimjs": "^16.1.8",
-        "three": "^0.149.0"
+        "three": "latest"
     },
     "bugs": {
         "url": "https://forum.zimjs.com"
