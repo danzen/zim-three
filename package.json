@@ -1,41 +1,45 @@
 {
-  "name": "@zimjs/three",
-  "version": "2.3.5",
-  "description": "Three is a helper module for the ZIM JavaScript Canvas Framework that imports three.js and provides a fast easy way to get started, bring three.js into ZIM or bring ZIM into three.js as TextureActives for full 2D interactivity on any texture / material in three.js.  Great for menus but also puzzles, games, art on walls, models, or any mesh!",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danzen/zim-three.git"
-  },
-  "keywords": [
-    "3D",
-    "threejs",
-    "textureactive",
-    "interactive",
-    "textures",
-    "zimjs",
-    "zim",
-    "components",
-    "hud",
-    "interfaces",
-    "menus",
-    "interactive",
-    "2D"
-  ],
-  "author": "Dr Abstract",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/three": "^0.161.0",
-    "three": "^0.161.0",
-    "typescript": "^5.3.3",
-    "zimjs": "^16.1.8"
-  },
-  "bugs": {
-    "url": "https://forum.zimjs.com"
-  },
-  "homepage": "https://github.com/danzen/zim-three#readme"
+    "name": "@zimjs/three",
+    "version": "2.3.6",
+    "description": "Three is a helper module for the ZIM JavaScript Canvas Framework that imports three.js and provides a fast easy way to get started, bring three.js into ZIM or bring ZIM into three.js as TextureActives for full 2D interactivity on any texture / material in three.js.  Great for menus but also puzzles, games, art on walls, models, or any mesh!",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/danzen/zim-three.git"
+    },
+    "keywords": [
+        "3D",
+        "threejs",
+        "textureactive",
+        "interactive",
+        "textures",
+        "zimjs",
+        "zim",
+        "components",
+        "hud",
+        "interfaces",
+        "menus",
+        "interactive",
+        "2D"
+    ],
+    "author": "Dr Abstract",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/three": "^0.161.0",
+        "three": "^0.161.0",
+        "typescript": "^5.3.3",
+        "zimjs": "^16.1.8"
+    },
+    "peerDependencies": {
+        "zimjs": "^16.1.8",
+        "three": "^0.149.0"
+    },
+    "bugs": {
+        "url": "https://forum.zimjs.com"
+    },
+    "homepage": "https://github.com/danzen/zim-three#readme"
 }
