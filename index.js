@@ -89,10 +89,10 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
 
     var that = this;
 
-    var pRatio = frame.retina?(window.devicePixelRatio || 1):1;
+    var pRatio = frame.retina?(WW.devicePixelRatio || 1):1;
 
     // RENDERER
-    if (window.WebGLRenderingContext || document.createElement('canvas').getContext('experimental-webgl')) {
+    if (WW.WebGLRenderingContext || document.createElement('canvas').getContext('experimental-webgl')) {
         var renderer = that.renderer = new WebGLRenderer({alpha: true, antialias:true});
         renderer.setSize(width*pRatio, height*pRatio);			
         if (ortho) renderer.autoClear = false;
@@ -141,8 +141,8 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
         zim.centerReg(DOMElement, null, null, false);
         frame.stage.addChild(DOMElement);
     } else {
-        width = window.innerWidth;
-        height = window.innerHeight;
+        width = WW.innerWidth;
+        height = WW.innerHeight;
     }
             
 
@@ -151,7 +151,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
     // so need to be able to convert from window to frame
     // use this in ZIM to position and scale the Three DOMElement
     this.position = function(x, y) {
-        if (textureActive || full) return;
+        if (textureActive || full || !frame) return;
         if (zot(x)) {
             x = zot(that.realX)?frame.stage.width/2:that.realX;
         } else {
@@ -221,8 +221,8 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
     if (textureActive || full) {
         if (resize) {
             that.resizeEvent = function() {
-                var width = window.innerWidth;
-                var height = window.innerHeight;			
+                var width = WW.innerWidth;
+                var height = WW.innerHeight;			
                 camera.aspect = width/height;
                 camera.updateProjectionMatrix();			
                 if (ortho) {
@@ -234,7 +234,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
                 }			
                 renderer.setSize(width, height);					
             }
-            window.addEventListener('resize', that.resizeEvent, false);
+            WW.addEventListener('resize', that.resizeEvent, false);
             that.resizeEvent();			
         }
     } else {
@@ -243,7 +243,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
                 that.scale();
                 that.position();
             };
-            window.addEventListener('resize', that.resizeEvent, false);	
+            WW.addEventListener('resize', that.resizeEvent, false);	
             that.resizeEvent();
         }
     }
@@ -362,8 +362,8 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
         if (!that.positionEvent) {
             that.positionItems = new zim.Dictionary(true);
             that.positionEvent = function() {
-                var width = window.innerWidth;
-                var height = window.innerHeight;
+                var width = WW.innerWidth;
+                var height = WW.innerHeight;
                 zim.loop(that.positionItems.values, function(v) {
 
                     var w = v.obj.geometry.parameters.width*v.obj.scale.x;
@@ -387,7 +387,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
 
                 });
             };
-            window.addEventListener('resize', that.positionEvent, false);				
+            WW.addEventListener('resize', that.positionEvent, false);				
         }
         mesh.pos = function(x,y,horizontal,vertical,gutter) {
             if (zot(x)) x = 0;
@@ -484,8 +484,12 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
                 }
             }
         }
+
+    
+
         if (that.canvas) that.canvas.style.display = "none";
-        frame.off("resize", that.resizeEvent);
+        if (that.resizeEvent) WW.removeEventListener("resize", that.resizeEvent);
+        if (that.positionEvent) WW.removeEventListener("resize", that.positionEvent);
         that.renderer = null;
         that.canvas = null;
         that.DOMElement = null;
