@@ -85,6 +85,7 @@ zim.Three = function(width, height, color, cameraPosition, cameraLook, interacti
     if (zot(xrBufferScale)) xrBufferScale = 2;
 
     if (zot(WW.zimDefaultThree)) WW.zimDefaultThree = this;
+    this.frame = frame;
 
     var that = this;
 

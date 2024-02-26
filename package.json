@@ -1,6 +1,6 @@
 {
     "name": "@zimjs/three",
-    "version": "2.3.7",
+    "version": "2.3.8",
     "description": "Three is a helper module for the ZIM JavaScript Canvas Framework that imports three.js and provides a fast easy way to get started, bring three.js into ZIM or bring ZIM into three.js as TextureActives for full 2D interactivity on any texture / material in three.js.  Great for menus but also puzzles, games, art on walls, models, or any mesh!",
     "main": "index.js",
     "types": "index.d.ts",
@@ -32,10 +32,10 @@
         "@types/three": "^0.161.0",
         "three": "^0.161.0",
         "typescript": "^5.3.3",
-        "zimjs": "^16.1.8"
+        "zimjs": "^16.1.9"
     },
     "peerDependencies": {
-        "zimjs": "^16.1.8",
+        "zimjs": "^16.1.9",
         "three": "latest"
     },
     "bugs": {
