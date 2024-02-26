@@ -12,8 +12,9 @@ declare namespace zim {
         scale(s?: number):this
         rotateAroundAxis(obj: THREE.Mesh, axis?: THREE.Vector3, radians?: boolean):this
         rotateAroundObjectAxis(obj: THREE.Mesh, axis?: THREE.Vector3, radians?: boolean):this
-        makePanel(config_or_textureActive: TextureActive|[TextureActive], textureActives: TextureActives, scale?: number, curve?: number, opacity?: number, material?: string, doubleSide?: boolean, colorSpace?: string):THREE.Mesh
-        makePanel(config: {textureActive: TextureActive|[TextureActive], textureActives: TextureActives, scale?: number, curve?: number, opacity?: number, material?: string, doubleSide?: boolean, colorSpace?: string}):THREE.Mesh
+        makePanel(config_or_textureActive: TextureActive|[TextureActive], textureActives: TextureActives, scale?: number, curve?: number, opacity?: number, material?: THREE.Material, doubleSide?: boolean, colorSpace?: string):THREE.Mesh
+        makePanel(config: {textureActive: TextureActive|[TextureActive], textureActives: TextureActives, scale?: number, curve?: number, opacity?: number, material?: THREE.Material, doubleSide?: boolean, colorSpace?: string}):THREE.Mesh
+        posMesh(mesh:THREE.Mesh, x?: number, y?: number, horizontal?: string, vertical?: string, gutter?: number):this
         flipMaterial(materialType:THREE.Material, params?:{}):this
         curvePlane(geometry: THREE.PlaneGeometry, z?: number):this
         dispose():void
