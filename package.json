@@ -29,8 +29,8 @@
     "author": "Dr Abstract",
     "license": "MIT",
     "devDependencies": {
-        "@types/three": "^0.161.0",
-        "three": "^0.161.0",
+        "@types/three": "latest",
+        "three": "latest",
         "typescript": "^5.3.3",
         "zimjs": "^16.1.9"
     },
