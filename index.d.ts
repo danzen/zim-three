@@ -5,8 +5,8 @@ import * as THREE from "three"
 declare namespace zim {
 
     export class Three {
-        constructor(config_or_width?: number, height?: number, color?: string, cameraPosition?: THREE.Vector3, cameraLook?: THREE.Vector3, interactive?: boolean, resize?: boolean, frame?: Frame, ortho?: boolean, textureActive?: boolean, colorSpace?: string, colorManagement?: boolean, legacyLights?: boolean, throttle?: boolean, lay?: string, full?: boolean, xr?: boolean, VRButton?: boolean|HTMLAnchorElement, xrBufferScale?: number);
-        constructor(config: {width?: number, height?: number, color?: string, cameraPosition?: THREE.Vector3, cameraLook?: THREE.Vector3, interactive?: boolean, resize?: boolean, frame?: Frame, ortho?: boolean, textureActive?: boolean, colorSpace?: string, colorManagement?: boolean, legacyLights?: boolean, throttle?: boolean, lay?: string, full?: boolean, xr?: boolean, VRButton?: boolean|HTMLAnchorElement, xrBufferScale?: number});
+        constructor(config_or_width?: number, height?: number, color?: string, cameraPosition?: THREE.Vector3, cameraLook?: THREE.Vector3, interactive?: boolean, resize?: boolean, frame?: Frame, ortho?: boolean, textureActive?: boolean, colorSpace?: string, colorManagement?: boolean, legacyLights?: boolean, throttle?: boolean, lay?: string, full?: boolean, xr?: boolean, VRButton?: boolean|HTMLAnchorElement, xrBufferScale?: number, tag?: string|HTMLElement);
+        constructor(config: {width?: number, height?: number, color?: string, cameraPosition?: THREE.Vector3, cameraLook?: THREE.Vector3, interactive?: boolean, resize?: boolean, frame?: Frame, ortho?: boolean, textureActive?: boolean, colorSpace?: string, colorManagement?: boolean, legacyLights?: boolean, throttle?: boolean, lay?: string, full?: boolean, xr?: boolean, VRButton?: boolean|HTMLAnchorElement, xrBufferScale?: number, tag?: string|HTMLElement});
         
         position(x?: number, y?: number):this
         scale(s?: number):this
