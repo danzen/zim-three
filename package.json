@@ -32,10 +32,10 @@
         "@types/three": "latest",
         "three": "latest",
         "typescript": "^5.3.3",
-        "zimjs":  "^17.3.3"
+        "zimjs":  "^18.0.0"
     },
     "peerDependencies": {
-        "zimjs": "^17.3.3",
+        "zimjs": "^18.0.0",
         "three": "latest"
     },
     "bugs": {
